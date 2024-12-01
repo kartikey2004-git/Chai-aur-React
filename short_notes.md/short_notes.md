@@ -62,3 +62,7 @@ but agar hum function reference mein direct parameter dedete hai toh woh return 
 callback ek function hai wo set color function ko hi call kr rha hai 
 
 refresh krne pe olive isliye aa rha hai kyuki single application page hai and refresh krne pr wo intial state mein aa jayega jaha pr humne default value olive rkhi hui hai
+
+----------------------------------------
+
+Cache has multiple meanings, including a temporary storage space in computing and a hidden place for storing things:
