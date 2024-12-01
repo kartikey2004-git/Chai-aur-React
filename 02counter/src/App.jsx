@@ -15,9 +15,11 @@ function App() {
 
   const addValue = () => {
     if(counter<20){
-      counter = counter + 1
-    } 
-    setCounter(counter)
+      setCounter((prevCounter) => (prevCounter + 1))
+      setCounter((prevCounter) => (prevCounter + 1))
+      setCounter((prevCounter) => (prevCounter + 1))
+      setCounter((prevCounter) => (prevCounter + 1))
+    }
     console.log("clicked",counter);
   }
 
@@ -58,3 +60,15 @@ export default App
 
 
 /* jaise hi set counter mein value aati hai react andar se trigger krta hai , automatically DOM analyse hota hai ki kaha kaha pr value hai jo mujhe update krni hai*/
+
+
+// in further case value update ho jayegi
+// const addValue = () => {
+//   if(counter<20){
+//     counter = counter + 1
+//     counter = counter + 1
+//     counter = counter + 1
+//   } 
+//   setCounter(counter)
+//   console.log("clicked",counter);
+// }
