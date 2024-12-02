@@ -66,3 +66,52 @@ refresh krne pe olive isliye aa rha hai kyuki single application page hai and re
 ----------------------------------------
 
 Cache has multiple meanings, including a temporary storage space in computing and a hidden place for storing things:
+
+--------------------------------------------
+
+password wali useState mein kuch default password bhi de skte hai but hum password generate krwayenge 
+ye ek alg mechanism hota hai jaise hi humara page load ho , automatically koi functionality run ho jaye , API call ho jaye , koi method run ho jaye and phir waha se data leke hum password mein dal denge and jaise page load hoga automatically UI se uske andar add ho jayega
+
+--------------------------------------------
+optimised solution to call one method many times(useCallback in react)
+we need to learn from documentation
+
+fn , arrays  ke hum dependencies pass krte hai
+React limits the numbers of renders to prevent the infinite loop
+
+setPassword dependencies for optimization for concept of memoisation(general concept hai ki aap ek aisa password bhi dedo jaha value set ho rhi hai)
+
+Cache has multiple meanings, including a temporary storage space in computing and a hidden place for storing things:
+
+kyuki hum core react mein kaam kr rhe hai toh hum window likh paa rhe hai , kyuki ultimately puri react compile hogi javascript mein jaha bhi yeh run hogi waha pe window object ka access hoga
+ 
+
+But in nextJS waha hoti hai server side rendering , waha sara code execute hota hai server pe , waha pr humare pass window object nhi hota hai
+
+---------------------------------------------------
+
+1. use Callback: used for optimization it calls the function inside it when the dependencies are changed and returns a memorized function 
+2. useeffect: runs the function inside it whenever the page renders first-time or dependencies are changed
+3. use ref : used to give reference of selected components in our page so that functions can be performed on referenced values
+
+I think we should not include setPassword in the useCallback dependency array, because when this functional component rerenders, the reference of the setPassword function would be different from the setPassword function on previous rerender. So this would again create the function. This would totally defy the reason why we are using useCallback as the function would again be created on every rerender.
+
+
+In React, the setState function retains its reference between renders, and the reference to it does not change unless the component unmounts. 
+This behavior is consistent within the same component instance during its lifecycle. As long as the component is mounted and not unmounted, the reference to setState remains the same throughout rendering and re-rendering cycles.
+
+render, re-render is different from mounting and unmounting, right ? 
+So, it should get retained in memory. And what you did was correct I guess, setPassword does not change ever, so mentioning it within the dependency array doesn't affect the memoization of the function at all, it is all the other dependencies that have a direct relationship with memoization. 
+When includeCharacter and includeNumbers are toggled a new function body gets returned by useCallback. And only then the useEffect gets triggered. 
+
+Please correct me, if I'm wrong. And do pin this comment so that it gets more attention.
+
+
+No Hitesh, you are wrong. According to react docs, React guarantees that setState function identity is stable and won't change on re-renders. This is why it's safe to omit these functions from the useEffect or useCallback dependency list.
+
+
+Actually I think that useEffect triggers first, and when it calls passwordGenerator, then here memoization and all is taken into consideration.
+Since useEffect is also executed when length, numberallowed, charallowed changes. These are same dependencies associated with useCallback(). So passwordGenerator will create a new function..
+Actually, he just wanted to explain useCallback(), that's why he has used it here. Because everytime the passwordGenerator is called a new function is created.
+
+---------------------------------------------------
