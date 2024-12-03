@@ -115,3 +115,38 @@ Since useEffect is also executed when length, numberallowed, charallowed changes
 Actually, he just wanted to explain useCallback(), that's why he has used it here. Because everytime the passwordGenerator is called a new function is created.
 
 ---------------------------------------------------
+
+but in Currency converter we access data with help of API calls and how to optimised web page for performance , functionality of swap 
+Remarkable Component reusability
+
+-----------------------------------------------------
+
+hooks jo hote hai wo apne aap mein ek method hai 
+ek method hai hooks jo ki return value mein array de rhe honge and humne usi return value mein ek variable liya hai and ek function ka reference liya hoga
+
+jitne bhi hooks hote hai majorily most of the cases mein javascript hi return krte hai aur ye ek achi practice ye hoti hai 
+
+-----------------------------------------------------
+ and ye jitne bhi custom hooks hai wo bhi built in hooks ko use kr skte hai
+
+ kayi hooks optional argument bhi lete hai
+
+ jab ye hook load hoga ya toh jab koi hook use hoga , tab main apne hook ko call krwau
+
+ Mount: In React, mounting is the process of creating a React component and inserting it into the Document Object Model (DOM) for the first time.
+
+ but aise konsa hook hai jo ki main invoke kr skta hu , jab bhi koi component mount  ho and uska lifecycle event trigger hota hai , toh humare pass ek hook hota hai
+
+ useEffect se automatically fetch call ho jayega(function ke andar ek aur function nhi banana padega , ki acha function call hogya hai ab mera API call krdo)
+
+JSON data abhi json format mein lekin jab bhi humein response milta hai API ka woh string ke format mein milta hai
+
+
+(most API calls jo value aati hai most of the times woh aati hai string mein) handled by react query by default
+
+and har baar ek object ko access krne ke liye dot operator jaruri nhi hai hum [] se bhi access le skte hai
+
+
+20:09 time stamp
+
+-------------------------------------------------
