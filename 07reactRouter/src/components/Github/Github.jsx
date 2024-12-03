@@ -30,6 +30,7 @@ export default Github
 
 
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const githubInfoLoader = async ()=> {
   const response = await fetch('https://api.github.com/users/kartikey2004-git')
   return response.json()
