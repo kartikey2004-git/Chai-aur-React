@@ -150,3 +150,10 @@ and har baar ek object ko access krne ke liye dot operator jaruri nhi hai hum []
 20:09 time stamp
 
 -------------------------------------------------
+
+Prop drilling
+Context Api
+Redux 
+Redux toolkit (RTK)
+Zustand
+React - redux 
