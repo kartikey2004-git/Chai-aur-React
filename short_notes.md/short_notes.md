@@ -157,3 +157,7 @@ Redux
 Redux toolkit (RTK)
 Zustand
 React - redux 
+
+
+concept of vendor lock in
+services
