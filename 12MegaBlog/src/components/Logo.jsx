@@ -1,5 +1,5 @@
 function Logo({width = '100px'}) {
-  return(
+  return (
     <div>Logo</div>
   )
 }
