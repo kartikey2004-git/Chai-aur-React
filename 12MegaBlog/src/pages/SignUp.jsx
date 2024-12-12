@@ -1,12 +1,11 @@
-import { SignUp as SignupComponent} from '../components';
+import { Signup as SignupComponent } from "../components";
 
-
-function SignUp() {
+function Signup() {
   return (
-    <div className='py-8'>
-    <SignupComponent/>
+    <div className="py-8">
+      <SignupComponent />
     </div>
-  )
+  );
 }
 
-export default SignUp;
+export default Signup;

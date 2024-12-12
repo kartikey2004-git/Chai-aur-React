@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-function Button({
+
+export default function Button({
   children,
   // eslint-disable-next-line no-unused-vars
   type = "button",
@@ -10,11 +11,11 @@ function Button({
 }) {
   return (
     <button
-      className={`px-4 py-2 rounded-lg ${className} ${textColor} ${bgColor}`} {...props}
+      className={`px-4 py-2 rounded-lg ${bgColor} ${textColor} ${className}`}
+      {...props}
     >
       {children}
     </button>
   );
 }
 
-export default Button;

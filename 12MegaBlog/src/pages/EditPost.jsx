@@ -1,34 +1,28 @@
-import { useEffect , useState } from "react";
-import { Container , PostForm } from "../components";
-import appwriteService from "../appwrite/config"
-import { useNavigate, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Container, PostCard } from "../components";
+import appwriteService from "../appwrite/config";
 
-function EditPost() {
-  const [post , setPosts] = useState(null)
-  const {slug} = useParams()
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    if(slug){
-      appwriteService.getPost(slug).then((post)=>{
-        if(post){
-          setPosts(post)
-        }
-      })
+function AllPosts() {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {}, []);
+  appwriteService.getPosts([]).then((posts) => {
+    if (posts) {
+      setPosts(posts.documents);
     }
-    else{
-      navigate('/')
-    }
-  },[slug,navigate])
-
-  return post ? (
-    <div className="py-8">
+  });
+  return (
+    <div className="w-full py-8">
       <Container>
-        <PostForm post={post}/>
+        <div className="flex flex-wrap">
+          {posts.map((post) => (
+            <div key={post.$id} className="p-2 w-1/4">
+              <PostCard {...post} />
+            </div>
+          ))}
+        </div>
       </Container>
     </div>
-  ) : null
-
+  );
 }
 
-export default EditPost;
+export default AllPosts;

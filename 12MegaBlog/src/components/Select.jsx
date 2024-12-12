@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
-import React from "react";
-import { useId } from "react";
+import React, { useId } from "react";
 
-function Select({ options, label, className = "", ...props }, ref) {
+function Select({ options, label, className, ...props }, ref) {
   const id = useId();
   return (
     <div className="w-full">
@@ -23,4 +22,4 @@ function Select({ options, label, className = "", ...props }, ref) {
   );
 }
 
-export default React.forwardRef(Select)
+export default React.forwardRef(Select);
