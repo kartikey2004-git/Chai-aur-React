@@ -12,10 +12,10 @@ function Login() {
   const { register, handleSubmit } = useForm();
   const [error, setError] = useState("");
 
-  const login = async (data) => {
+  const login = async (email, password) => {
     setError("");
     try {
-      const session = await authService.login(data);
+      const session = await authService.login(email, password);
       if (session) {
         const userData = await authService.getCurrentUser();
         if (userData) dispatch(authLogin(userData));
@@ -47,7 +47,7 @@ function Login() {
           </Link>
         </p>
         {error && <p className="text-center text-red-600 mt-4">{error}</p>}
-        <form onSubmit={handleSubmit(login)} className="space-y-5 lg:space-y-6">
+        <form onSubmit={handleSubmit((data) => login(data.email, data.password))} className="space-y-5 lg:space-y-6">
           <Input
             label="Email"
             placeholder="Enter your email"
