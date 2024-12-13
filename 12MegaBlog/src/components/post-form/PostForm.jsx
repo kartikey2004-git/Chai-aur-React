@@ -78,17 +78,17 @@ export default function PostForm({ post }) {
   }, [watch, slugTransform, setValue]);
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-      <div className="w-2/3 px-2">
+    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap bg-white rounded-lg shadow-md p-6">
+      <div className="w-full lg:w-2/3 px-2 mb-4">
         <Input
-          label="Title :"
-          placeholder="Title"
+          label="Title:"
+          placeholder="Enter the title"
           className="mb-4"
           {...register("title", { required: true })}
         />
         <Input
-          label="Slug :"
-          placeholder="Slug"
+          label="Slug:"
+          placeholder="Enter the slug"
           className="mb-4"
           {...register("slug", { required: true })}
           onInput={(e) => {
@@ -98,15 +98,15 @@ export default function PostForm({ post }) {
           }}
         />
         <RTE
-          label="Content :"
+          label="Content:"
           name="content"
           control={control}
           defaultValue={getValues("content")}
         />
       </div>
-      <div className="w-1/3 px-2">
+      <div className="w-full lg:w-1/3 px-2 mb-4">
         <Input
-          label="Featured Image :"
+          label="Featured Image:"
           type="file"
           className="mb-4"
           accept="image/png, image/jpg, image/jpeg, image/gif"
@@ -117,7 +117,7 @@ export default function PostForm({ post }) {
             <img
               src={appwriteService.getFilePreview(post.featuredImage)}
               alt={post.title}
-              className="rounded-lg"
+              className="rounded-lg shadow-md"
             />
           </div>
         )}
@@ -129,7 +129,8 @@ export default function PostForm({ post }) {
         />
         <Button
           type="submit"
-          bgColor={post ? "bg-green-500" : undefined}
+          bgColor={post ? "bg-green-600" : "bg-blue-600"}
+          hoverBgColor={post ? "hover:bg-green-700" : "hover:bg-blue-700"}
           className="w-full"
         >
           {post ? "Update" : "Submit"}
