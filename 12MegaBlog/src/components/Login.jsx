@@ -27,8 +27,8 @@ function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50">
-      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg space-y-6 md:space-y-8 lg:space-y-10">
+    <div className="flex items-center justify-center   min-h-screen bg-gray-50 ">
+      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg space-y-6 md:space-y-8 lg:space-y-10 ">
         <div className="flex justify-center mb-6">
           <span className="w-full max-w-[150px] md:max-w-[200px]">
             <Logo width="100%" />
@@ -52,7 +52,7 @@ function Login() {
             label="Email"
             placeholder="Enter your email"
             type="email"
-            className="text-black placeholder-gray-600 focus:placeholder-gray-800"
+            className="text-black"
             {...register("email", {
               required: true,
               validate: {
@@ -66,7 +66,8 @@ function Login() {
             label="Password"
             type="password"
             placeholder="Enter your password"
-            className="text-black placeholder-gray-600 focus:placeholder-gray-800"
+            className="text-black"
+            
             {...register("password", {
               required: true,
             })}
