@@ -27,8 +27,8 @@ function Signup() {
   };
 
   return (
-    <div className="flex items-center justify-center   min-h-screen bg-gray-50">
-      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg space-y-6 md:space-y-8 lg:space-y-10 ">
+    <div className="flex h-screen w-screen items-center justify-center">
+      <div className="w-full max-w-md p-8 mb-32 bg-white rounded-lg shadow-lg space-y-6 md:space-y-8 lg:space-y-10 ">
         <div className="flex justify-center ">
           <span className="w-full max-w-[150px] md:max-w-[200px]">
             <Logo width="100%" />
@@ -79,7 +79,7 @@ function Signup() {
           </div>
           <Button
             type="submit"
-            className="w-full py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition duration-150 ease-in-out"
+            className="mt-7 text-white outline-none  border-none border-2 font-semibold  bg-gray-900 rounded-full py-2 w-full text-lg px-8"
           >
             Create Account
           </Button>

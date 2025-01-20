@@ -36,17 +36,17 @@ function Header() {
   ];
 
   return (
-    <header className="bg-gray-900 mb-auto text-white py-4 
+    <header className="bg-gray-900 mb-auto  text-white py-4 
     shadow-lg ">
       <Container>
         <nav className="flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <Logo width="70px" className="mr-3" />
+              <Logo width="70px" className="" />
               <span className="text-white text-xl font-semibold"></span>
             </Link>
           </div>
-          <ul className="flex items-center  space-x-4">
+          <ul className="flex items-center space-x-4">
             {navItems.map(
               (item) =>
                 item.active && (

@@ -2,10 +2,10 @@ import { Container, PostForm } from "../components";
 
 function AddPost() {
   return (
-    <div className="py-8">
+    <div className="py-8 w-screen">
       <Container>
         <div className="flex flex-col items-center lg:flex-row lg:justify-center">
-          <div className="w-full lg:w-3/4 xl:w-2/3">
+          <div className="w-full">
             <PostForm />
           </div>
         </div>

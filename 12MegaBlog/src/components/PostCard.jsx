@@ -11,7 +11,7 @@ function PostCard({ $id, title, featuredImage }) {
           <img
             src={appwriteService.getFilePreview(featuredImage)}
             alt={title}
-            className="w-full h-48 object-cover"
+            className="w-auto object-cover"
           />
         </div>
         <div className="p-4">
