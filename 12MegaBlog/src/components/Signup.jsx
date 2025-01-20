@@ -27,10 +27,10 @@ function Signup() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8">
-      <div className="w-full max-w-md p-6 space-y-6 bg-white rounded-lg shadow-lg md:p-8">
-        <div className="flex justify-center mb-4">
-          <span className="w-full max-w-[100px]">
+    <div className="flex items-center justify-center   min-h-screen bg-gray-50">
+      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg space-y-6 md:space-y-8 lg:space-y-10 ">
+        <div className="flex justify-center ">
+          <span className="w-full max-w-[150px] md:max-w-[200px]">
             <Logo width="100%" />
           </span>
         </div>
